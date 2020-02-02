@@ -34,12 +34,9 @@ class Song
 
   def self.find_or_create_by_name(name)
     if self.name == name
-      Song.all.find{|song| song.name = name}
+      self.find_by_name
     else
-      create_song_instance = self.new
-      create_song_instance.name = name
-      create_song_instance.save
-      create_song_instance
+      self.create_by_name
     end#end of if statement
   end
 
