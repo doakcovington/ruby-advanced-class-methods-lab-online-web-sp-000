@@ -37,8 +37,12 @@ class Song
     if new_song
       new_song
     else
-      create_by_name(name)
+      self.create_by_name(name)
     end
+  end
+
+  def self.alphabetical
+    songs_in_order = @@all.sort_by!{|song| song.downcase}
   end
 
 end
