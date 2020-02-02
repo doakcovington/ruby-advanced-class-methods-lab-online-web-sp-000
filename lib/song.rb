@@ -10,4 +10,22 @@ class Song
     self.class.all << self
   end
 
+  def self.create
+    @@all << self.new
+    @@all.last#returns last element of @@all array
+  end
+
+  def self.new_by_name(name)
+    song = self.new
+    song.name = name
+    song
+  end
+
+  def self.create_by_name(name)
+    create_song_instance = self.new
+    create_song_instance.name = name
+    create_song_instance.save
+    create_song_instance
+  end
+
 end
