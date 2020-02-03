@@ -60,4 +60,8 @@ class Song
     new_song.save
   end
 
+  def self.delete_all
+    @@all.clear
+  end
+
 end
